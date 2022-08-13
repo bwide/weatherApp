@@ -25,6 +25,7 @@ struct WeatherService: WeatherServiceProtocol {
 
 struct MockWeatherService: WeatherServiceProtocol {
     func fetchWeather(latitude: Double, longitude: Double) -> AnyPublisher<WeatherResponse, RequestError> {
+//        Fail(error: RequestError.invalidURL).eraseToAnyPublisher()
         FixturesBuilder
             .build(fixtureType: WeatherResponse.self, from: "WeatherResponseFixture")
     }

@@ -18,9 +18,35 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color.ds.primaryBackground
-            Text(vm.title)
+            
+            VStack(spacing: .ds.spacing.medium) {
+                Text(vm.cityName)
+                    .font(.headline)
+                weatherIcon
+                Text(vm.formattedTemperature)
+                    .font(.title)
+                Text(vm.shortDescription)
+                    .font(.body)
+                Text(vm.formattedHighLow)
+                    .font(.body)
+                Text(vm.windInformation)
+                    .font(.body)
+            }
+            .padding(.horizontal, .ds.spacing.medium)
         }
         .onAppear { vm.onAppear.send() }
+        .alert(for: $vm.error)
+    }
+    
+    @ViewBuilder
+    var weatherIcon: some View {
+        AsyncImage(url: vm.weatherIconURL) { image in
+            image
+                .resizable()
+                .frame(width: 100, height: 100)
+        } placeholder: {
+            ProgressView()
+        }
     }
 }
 

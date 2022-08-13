@@ -16,3 +16,16 @@ struct DSColors {
     let primaryBackground: Color = Color(uiColor: .systemBackground)
     let primaryFont: Color = .primary
 }
+
+extension CGFloat {
+    static let ds = DSFloats()
+}
+
+struct DSFloats {
+    let spacing = DSSpacings()
+}
+
+struct DSSpacings {
+    /// 24
+    let medium: CGFloat = 24
+}

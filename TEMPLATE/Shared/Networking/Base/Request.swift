@@ -8,7 +8,8 @@
 import Foundation
 
 protocol DisplayableError: Error {
-    var userDescription: String { get }
+    var alertTitle: String { get }
+    var alertDescription: String { get }
 }
 
 enum RequestMethod: String {
@@ -27,9 +28,15 @@ enum RequestError: DisplayableError {
     case unexpectedStatusCode
     case unknown(Error)
     
-    var userDescription: String {
+    var alertTitle: String {
         switch self {
-        case .decode: return "Decode error"
+        default: return "Error"
+        }
+    }
+    
+    var alertDescription: String {
+        switch self {
+        case .decode: return "Error decoding value"
         case .unauthorized: return "Session expired"
         default: return "Unknown error"
         }

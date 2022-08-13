@@ -32,8 +32,8 @@
 		228B4FA527D54BF9008F4F21 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4F7727D54BF7008F4F21 /* Persistence.swift */; };
 		228B4FA627D54BF9008F4F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228B4F7827D54BF9008F4F21 /* Assets.xcassets */; };
 		228B4FA727D54BF9008F4F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228B4F7827D54BF9008F4F21 /* Assets.xcassets */; };
-		228B4FD527D55958008F4F21 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD427D55958008F4F21 /* LazyView.swift */; };
-		228B4FD627D55958008F4F21 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD427D55958008F4F21 /* LazyView.swift */; };
+		228B4FD527D55958008F4F21 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD427D55958008F4F21 /* ErrorAlert.swift */; };
+		228B4FD627D55958008F4F21 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD427D55958008F4F21 /* ErrorAlert.swift */; };
 		228B4FD827D55994008F4F21 /* Preview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD727D55994008F4F21 /* Preview+Extensions.swift */; };
 		228B4FD927D55994008F4F21 /* Preview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FD727D55994008F4F21 /* Preview+Extensions.swift */; };
 		228B4FDB27D559C2008F4F21 /* SafeArea+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FDA27D559C2008F4F21 /* SafeArea+Extensions.swift */; };
@@ -85,12 +85,13 @@
 		228B4F9627D54BF9008F4F21 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		228B4F9A27D54BF9008F4F21 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		228B4F9C27D54BF9008F4F21 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		228B4FD427D55958008F4F21 /* LazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		228B4FD427D55958008F4F21 /* ErrorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		228B4FD727D55994008F4F21 /* Preview+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Preview+Extensions.swift"; sourceTree = "<group>"; };
 		228B4FDA27D559C2008F4F21 /* SafeArea+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SafeArea+Extensions.swift"; sourceTree = "<group>"; };
 		228B4FFD27D55F9F008F4F21 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		228B500027D55F9F008F4F21 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		228B500227D55F9F008F4F21 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		24F87B9228A856050098382F /* TEMPLATE--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TEMPLATE--iOS--Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +196,7 @@
 		228B4F6D27D54BF7008F4F21 = {
 			isa = PBXGroup;
 			children = (
+				24F87B9228A856050098382F /* TEMPLATE--iOS--Info.plist */,
 				228B4F7227D54BF7008F4F21 /* Shared */,
 				228B4F8427D54BF9008F4F21 /* macOS */,
 				228B4F8D27D54BF9008F4F21 /* Tests iOS */,
@@ -272,7 +274,7 @@
 		228B4FD327D558F0008F4F21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				228B4FD427D55958008F4F21 /* LazyView.swift */,
+				228B4FD427D55958008F4F21 /* ErrorAlert.swift */,
 				228B4FDA27D559C2008F4F21 /* SafeArea+Extensions.swift */,
 				228B4FD727D55994008F4F21 /* Preview+Extensions.swift */,
 			);
@@ -454,7 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2237712927D8F6C4005C0A10 /* WeatherRequest.swift in Sources */,
-				228B4FD527D55958008F4F21 /* LazyView.swift in Sources */,
+				228B4FD527D55958008F4F21 /* ErrorAlert.swift in Sources */,
 				228B4F9E27D54BF9008F4F21 /* TEMPLATE.xcdatamodeld in Sources */,
 				2237713327D92191005C0A10 /* WeatherModels.swift in Sources */,
 				228B4FDB27D559C2008F4F21 /* SafeArea+Extensions.swift in Sources */,
@@ -477,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				228B4FD627D55958008F4F21 /* LazyView.swift in Sources */,
+				228B4FD627D55958008F4F21 /* ErrorAlert.swift in Sources */,
 				228B4F9F27D54BF9008F4F21 /* TEMPLATE.xcdatamodeld in Sources */,
 				228B4FDC27D559C2008F4F21 /* SafeArea+Extensions.swift in Sources */,
 				19A3E11A28A75723004500A6 /* FixtureBuilder.swift in Sources */,
@@ -648,6 +650,7 @@
 				DEVELOPMENT_TEAM = D9KU92KK65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TEMPLATE--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -678,6 +681,7 @@
 				DEVELOPMENT_TEAM = D9KU92KK65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TEMPLATE--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
