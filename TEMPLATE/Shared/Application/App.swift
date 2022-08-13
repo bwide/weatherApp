@@ -11,7 +11,7 @@ import Swinject
 @main
 struct TEMPLATEApp: App {
     
-    static let container: Container = MockContainerFactory.build()
+    static let container: Container = ContainerFactory.build()
 
     var body: some Scene {
         WindowGroup {

@@ -34,7 +34,7 @@ struct HomeView: View {
             }
             .padding(.horizontal, .ds.spacing.medium)
         }
-        .onAppear { vm.onAppear.send() }
+        .onAppear { vm.refresh.send() }
         .alert(for: $vm.error)
     }
     

@@ -21,24 +21,22 @@ class HomeViewModel: ObservableObject {
     @Published var error: RequestError?
     
     //MARK: - Interactions
-    var onAppear: PassthroughSubject<Void, Never> = .init()
+    var refresh: PassthroughSubject<Void, Never> = .init()
 
     init() {
-        onAppear
-            .flatMap { [service] in service.fetchWeather(latitude: 10, longitude: 10) }
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    self.error = error
-                case .finished: break
-                }
-            }, receiveValue: { [weak self] in
-                self?.weather = $0
-            })
+        refresh
+            .flatMap { [service] in service.fetchWeather(latitude: 34.0194704, longitude: -118.491227) }
+            .receive(on: RunLoop.main)
+            .catch { [weak self] error -> AnyPublisher<WeatherResponse, Never> in
+                self?.error = error
+                return Empty().eraseToAnyPublisher()
+            }
+            .map { Optional.some($0) }
+            .assign(to: \.weather, on: self)
             .store(in: &cancellables)
     }
     
-    private var service: WeatherServiceProtocol = MockWeatherService()
+    private var service: WeatherServiceProtocol = inject()
     private var cancellables: Set<AnyCancellable> = []
 }
 
