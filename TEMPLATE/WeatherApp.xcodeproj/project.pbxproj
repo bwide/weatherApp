@@ -26,6 +26,7 @@
 		228B500327D55F9F008F4F21 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FFD27D55F9F008F4F21 /* WeatherService.swift */; };
 		228B500927D55F9F008F4F21 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B500027D55F9F008F4F21 /* HomeView.swift */; };
 		228B500D27D55F9F008F4F21 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B500227D55F9F008F4F21 /* HomeModel.swift */; };
+		2471831428A966B000237379 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 2471831328A966B000237379 /* SnapshotTesting */; };
 		24F87BFF28A893140098382F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 24F87BFE28A893140098382F /* Swinject */; };
 		24F87C0428A894B00098382F /* WeatherResponseFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 19A3E11628A75521004500A6 /* WeatherResponseFixture.json */; };
 		24F87C0728A89CE20098382F /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B4FFD27D55F9F008F4F21 /* WeatherService.swift */; };
@@ -93,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F87BFF28A893140098382F /* Swinject in Frameworks */,
+				2471831428A966B000237379 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +281,7 @@
 			name = "Tests iOS";
 			packageProductDependencies = (
 				24F87BFE28A893140098382F /* Swinject */,
+				2471831328A966B000237379 /* SnapshotTesting */,
 			);
 			productName = "Tests iOS";
 			productReference = 228B4F8A27D54BF9008F4F21 /* Tests iOS.xctest */;
@@ -314,6 +317,7 @@
 			mainGroup = 228B4F6D27D54BF7008F4F21;
 			packageReferences = (
 				19FDC04928A744C300571D3A /* XCRemoteSwiftPackageReference "Swinject" */,
+				2471831228A966B000237379 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 228B4F7E27D54BF9008F4F21 /* Products */;
 			projectDirPath = "";
@@ -670,6 +674,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		2471831228A966B000237379 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		24F87B9328A880050098382F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -685,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19FDC04928A744C300571D3A /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		2471831328A966B000237379 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2471831228A966B000237379 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		24F87B9728A884870098382F /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
