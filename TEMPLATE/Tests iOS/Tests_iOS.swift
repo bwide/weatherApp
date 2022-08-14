@@ -6,23 +6,25 @@
 //
 
 import XCTest
+import Combine
+
 
 class Tests_iOS: XCTestCase {
-
-    func testDecodeWeather() {
-        //TODO: test mock data not nil
+    
+    func testWeatherDetail() throws {
+        let expectation = self.expectation(description: "decode weather")
+        var weather: WeatherResponse?
+        
+        MockWeatherService().fetchWeather(latitude: 10, longitude: 10)
+            .sink(receiveCompletion: { _ in }) { response in
+                weather = response
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 3)
+        XCTAssertNotNil(weather)
     }
     
-    func testExample() throws {
-        //TODO: test mock data with snapshot
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+    var cancellables: Set<AnyCancellable> = []
 }
